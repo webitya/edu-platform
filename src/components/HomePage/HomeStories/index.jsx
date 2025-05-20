@@ -5,7 +5,7 @@ const HomeRecentStories = () => {
   const recentStories = [
     {
       id: 1,
-      image: "/images/story1.jpg",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyfGhGiDwfCXg3iwahhvQ-7S2tSRvdXSxEiA&s",
       date: "January 01, 2018",
       title: "Standard gallery post",
       description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
@@ -13,7 +13,7 @@ const HomeRecentStories = () => {
     },
     {
       id: 2,
-      image: "/images/story2.jpg",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyfGhGiDwfCXg3iwahhvQ-7S2tSRvdXSxEiA&s",
       date: "January 01, 2018",
       title: "Blog post with couple photos",
       description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
@@ -21,7 +21,7 @@ const HomeRecentStories = () => {
     },
     {
       id: 3,
-      image: "/images/story3.jpg",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyfGhGiDwfCXg3iwahhvQ-7S2tSRvdXSxEiA&s",
       date: "January 01, 2018",
       title: "Standard gallery post",
       description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",

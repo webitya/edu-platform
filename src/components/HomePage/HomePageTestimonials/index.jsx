@@ -4,42 +4,42 @@ const testimonials = [
   {
     name: "Jonathan Smith",
     company: "Wordpress Inc.",
-    image: "/images/jonathan.jpg",
+    image: "https://t3.ftcdn.net/jpg/02/55/22/68/360_F_255226859_Rhqr5hflr2esVXHQE1sS1bWxmZxs0gWI.jpg",
     review:
       "This should be used to tell a story and let your users know about your product or service.",
   },
   {
     name: "Angelina Rose",
     company: "Envato Inc.",
-    image: "/images/angelina.jpg",
+    image: "https://t3.ftcdn.net/jpg/02/55/22/68/360_F_255226859_Rhqr5hflr2esVXHQE1sS1bWxmZxs0gWI.jpg",
     review:
       "This should be used to tell a story and let your users know about your product or service.",
   },
   {
     name: "Michel Brown",
     company: "Google Inc.",
-    image: "/images/michel.jpg",
+    image: "https://t3.ftcdn.net/jpg/02/55/22/68/360_F_255226859_Rhqr5hflr2esVXHQE1sS1bWxmZxs0gWI.jpg",
     review:
       "This should be used to tell a story and let your users know about your product or service.",
   },
    {
     name: "Jonathan Smith",
     company: "Wordpress Inc.",
-    image: "/images/jonathan.jpg",
+    image: "https://t3.ftcdn.net/jpg/02/55/22/68/360_F_255226859_Rhqr5hflr2esVXHQE1sS1bWxmZxs0gWI.jpg",
     review:
       "This should be used to tell a story and let your users know about your product or service.",
   },
   {
     name: "Angelina Rose",
     company: "Envato Inc.",
-    image: "/images/angelina.jpg",
+    image: "https://t3.ftcdn.net/jpg/02/55/22/68/360_F_255226859_Rhqr5hflr2esVXHQE1sS1bWxmZxs0gWI.jpg",
     review:
       "This should be used to tell a story and let your users know about your product or service.",
   },
   {
     name: "Michel Brown",
     company: "Google Inc.",
-    image: "/images/michel.jpg",
+    image: "https://t3.ftcdn.net/jpg/02/55/22/68/360_F_255226859_Rhqr5hflr2esVXHQE1sS1bWxmZxs0gWI.jpg",
     review:
       "This should be used to tell a story and let your users know about your product or service.",
   },

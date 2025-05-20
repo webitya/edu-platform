@@ -26,7 +26,7 @@ const HomeWelcomeSection = () => {
 
         {/* Right Image Section */}
         <div className="w-full md:w-1/2 flex justify-center">
-          <img src="" alt="Student" className="max-w-sm w-full object-contain" />
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyfGhGiDwfCXg3iwahhvQ-7S2tSRvdXSxEiA&s" alt="Student" className="max-w-sm w-full object-contain" />
         </div>
       </div>
     </div>

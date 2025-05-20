@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes, FaEnvelope, FaPhone } from "react-icons/fa";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
-// Navigation links
 const navLinks = [
   { name: "Home", href: "#", subMenu: false },
   { name: "About", href: "#", subMenu: false },
@@ -16,11 +16,10 @@ const navLinks = [
       { name: "Page 2", href: "#page2" },
     ],
   },
-  { name: "Blog", href: "#", subMenu: true },
+  { name: "Blog", href: "#", subMenu: true, children: [] },
   { name: "Contact", href: "#", subMenu: false },
 ];
 
-// TopBar component
 const TopBar = ({ visible }) => {
   return (
     <div
@@ -29,22 +28,22 @@ const TopBar = ({ visible }) => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 flex justify-between items-center flex-wrap">
-        <div className="flex items-center gap-6">
-          <div className="flex items-center gap-1">
-            <FaEnvelope className="text-xs" />
+        <div className="flex items-center gap-6 text-xs md:text-sm">
+          <div className="flex items-center gap-2">
+            <FaEnvelope className="text-sm" />
             <span>Info@YourDomain.com</span>
           </div>
-          <div className="flex items-center gap-1">
-            <FaPhone className="text-xs" />
+          <div className="flex items-center gap-2">
+            <FaPhone className="text-sm" />
             <span>+(333) 052 39876</span>
           </div>
           <span className="font-semibold">Have any question?</span>
         </div>
         <div className="flex gap-4">
-          <a href="#" className="hover:underline text-sm font-semibold">
+          <a href="#" className="hover:underline text-xs md:text-sm font-semibold">
             Register
           </a>
-          <a href="#" className="hover:underline text-sm font-semibold">
+          <a href="#" className="hover:underline text-xs md:text-sm font-semibold">
             Login
           </a>
         </div>
@@ -53,15 +52,13 @@ const TopBar = ({ visible }) => {
   );
 };
 
-// Navbar component
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [showDropdown, setShowDropdown] = useState(null);
+  const [openDropdown, setOpenDropdown] = useState(null);
 
   return (
-    <header className="w-full shadow-sm border-b bg-white z-50">
+    <header className="w-full shadow-md bg-white z-50 py-2">
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-        {/* Logo */}
         <div className="flex items-center gap-2">
           <img src="/logo-icon.png" alt="logo" className="w-6 h-6" />
           <span className="text-2xl font-bold text-black">
@@ -69,28 +66,25 @@ const Navbar = () => {
           </span>
         </div>
 
-        {/* Desktop Menu */}
-        <nav className="hidden md:flex items-center gap-6 relative">
+        <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link, idx) => (
             <div key={idx} className="relative group">
-              <a
-                href={link.href}
-                className="text-sm font-semibold text-slate-900 hover:text-yellow-500 flex items-center"
-                onMouseEnter={() => setShowDropdown(link.subMenu ? link.name : null)}
-                onMouseLeave={() => setShowDropdown(null)}
+              <button
+                onMouseEnter={() => setOpenDropdown(link.subMenu ? link.name : null)}
+                onMouseLeave={() => setOpenDropdown(null)}
+                className="flex items-center text-sm font-semibold text-slate-900 hover:text-yellow-500 transition"
               >
                 {link.name}
-                {link.subMenu && <span className="ml-1">▸</span>}
-              </a>
+                {link.subMenu && <MdKeyboardArrowDown className="ml-1" />}
+              </button>
 
-              {/* Dropdown */}
-              {link.subMenu && link.children && showDropdown === link.name && (
-                <div className="absolute top-full left-0 mt-2 bg-white border rounded shadow p-2 space-y-1 z-50">
+              {link.subMenu && link.children?.length > 0 && openDropdown === link.name && (
+                <div className="absolute top-full left-0 mt-2 bg-white border rounded shadow-lg py-2 z-50 w-40 animate-fadeIn">
                   {link.children.map((child, i) => (
                     <a
                       key={i}
                       href={child.href}
-                      className="block px-4 py-1 text-sm text-slate-700 hover:text-yellow-500"
+                      className="block px-4 py-2 text-sm text-slate-700 hover:bg-yellow-100 hover:text-yellow-600"
                     >
                       {child.name}
                     </a>
@@ -102,13 +96,12 @@ const Navbar = () => {
 
           <a
             href="#"
-            className="bg-yellow-500 text-white px-4 py-2 text-sm font-bold hover:bg-yellow-600 transition rounded"
+            className="ml-4 bg-yellow-500 text-white px-5 py-2 text-sm font-semibold rounded hover:bg-yellow-600 transition"
           >
             REGISTER NOW
           </a>
         </nav>
 
-        {/* Mobile Icon */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden text-2xl text-slate-800 focus:outline-none"
@@ -117,9 +110,8 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       <div
-        className={`md:hidden transition-all duration-300 bg-white px-6 pt-4 pb-6 ${
+        className={`md:hidden transition-all duration-300 bg-white px-6 pt-4 pb-6 shadow-md ${
           mobileOpen ? "block" : "hidden"
         }`}
       >
@@ -127,14 +119,12 @@ const Navbar = () => {
           <div key={idx} className="py-2">
             <a
               href={link.href}
-              className="block text-base font-medium text-gray-700 hover:text-yellow-500"
+              className="block text-base font-medium text-gray-800 hover:text-yellow-500"
             >
               {link.name}
-              {link.subMenu && <span className="ml-1">▸</span>}
+              {link.subMenu && <MdKeyboardArrowDown className="inline ml-1" />}
             </a>
-
-            {/* Mobile SubMenu */}
-            {link.subMenu && link.children && (
+            {link.subMenu && link.children?.length > 0 && (
               <div className="ml-4 mt-1 space-y-1">
                 {link.children.map((child, i) => (
                   <a
@@ -161,25 +151,24 @@ const Navbar = () => {
   );
 };
 
-// Combined Header component
 const Header = () => {
   const [showTopBar, setShowTopBar] = useState(true);
   const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => {
+    const handleScroll = () => {
       const scrolled = window.scrollY;
       setShowTopBar(scrolled < 100);
       setIsSticky(scrolled >= 100);
     };
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <>
       <TopBar visible={showTopBar} />
-      <div className={`${isSticky ? "sticky top-0" : ""}`} style={{zIndex:"99999"}}>
+      <div className={`${isSticky ? "sticky top-0" : ""}`} style={{ zIndex: 99999 }}>
         <Navbar />
       </div>
     </>

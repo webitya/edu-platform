@@ -11,7 +11,7 @@ const events = [
     location: 'INTER CONTINENTAL GARDEN, DHAKA.',
     description:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry. The industry’s standard dummy text ever scramble.',
-    image: '/images/event1.jpg', // Replace with your actual image path
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyfGhGiDwfCXg3iwahhvQ-7S2tSRvdXSxEiA&s', // Replace with your actual image path
     ticketLink: '#'
   },
     {
@@ -23,7 +23,7 @@ const events = [
     location: 'INTER CONTINENTAL GARDEN, DHAKA.',
     description:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry. The industry’s standard dummy text ever scramble.',
-    image: '/images/event1.jpg', // Replace with your actual image path
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyfGhGiDwfCXg3iwahhvQ-7S2tSRvdXSxEiA&s', // Replace with your actual image path
     ticketLink: '#'
   },
   // Add more event objects as needed

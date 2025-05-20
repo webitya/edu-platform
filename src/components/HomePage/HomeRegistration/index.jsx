@@ -4,9 +4,9 @@ const HomeRegistrationSection = () => {
   return (
     <div
       className="relative bg-cover bg-center bg-no-repeat min-h-screen flex items-center justify-center px-4"
-      style={{ backgroundImage: "url('/path-to-your-image.jpg')" }} // Replace with actual image path
+      style={{ backgroundImage: "url('https://t3.ftcdn.net/jpg/02/55/22/68/360_F_255226859_Rhqr5hflr2esVXHQE1sS1bWxmZxs0gWI.jpg')" }} // Replace with actual image path
     >
-      <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+      <div className="absolute inset-0 bg-black/60"></div>
 
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl w-full items-center">
         {/* Left Side */}
