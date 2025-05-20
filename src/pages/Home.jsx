@@ -12,6 +12,7 @@ import HomeTestimonialCarousel from '../components/HomePage/HomePageTestimonials
 import HomeBecomeInstructor from '../components/HomePage/HomeBecomeInstr'
 import Footer from '../components/global/Footer'
 import HomeRecentStories from '../components/HomePage/HomeStories'
+import HomeBrandsLogoSlider from '../components/HomePage/HomeBrands'
 
 export const Home = () => {
   return (
@@ -26,6 +27,7 @@ export const Home = () => {
      <HomeTestimonialCarousel/>
      <HomeBecomeInstructor/>
      <HomeRecentStories/>
+     <HomeBrandsLogoSlider/>
      <Footer/>
     </>
   )
