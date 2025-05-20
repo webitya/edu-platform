@@ -158,7 +158,7 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.scrollY;
-      setShowTopBar(scrolled < 100);
+      setShowTopBar(scrolled < 101);
       setIsSticky(scrolled >= 100);
     };
     window.addEventListener("scroll", handleScroll);
