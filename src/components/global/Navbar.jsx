@@ -3,61 +3,59 @@ import { FaBars, FaTimes, FaEnvelope, FaPhone } from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
 const navLinks = [
-  { name: "Home", href: "#", subMenu: false },
-  { name: "About", href: "#", subMenu: false },
-  { name: "Courses", href: "#", subMenu: false },
-  { name: "Events", href: "#", subMenu: false },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Courses", href: "/courses" },
+  { name: "Events", href: "/events" },
   {
     name: "Pages",
-    href: "#",
+    href: "/pages", // Use real link or placeholder
     subMenu: true,
     children: [
-      { name: "Page 1", href: "#page1" },
-      { name: "Page 2", href: "#page2" },
+      { name: "Page 1", href: "/page1" },
+      { name: "Page 2", href: "/page2" },
     ],
   },
-  { name: "Blog", href: "#", subMenu: true, children: [] },
-  { name: "Contact", href: "#", subMenu: false },
+  { name: "Blog", href: "/blogs", subMenu: true, children: [] },
+  { name: "Contact", href: "/contact" },
 ];
 
-const TopBar = ({ visible }) => {
-  return (
-    <div
-      className={`w-full bg-[#1c1c35] text-white text-sm transition-all duration-300 ${
-        visible ? "opacity-100 py-2 h-auto" : "opacity-0 h-0 overflow-hidden"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 flex justify-between items-center flex-wrap">
-        <div className="flex items-center gap-6 text-xs md:text-sm">
-          <div className="flex items-center gap-2">
-            <FaEnvelope className="text-sm" />
-            <span>Info@YourDomain.com</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <FaPhone className="text-sm" />
-            <span>+(333) 052 39876</span>
-          </div>
-          <span className="font-semibold">Have any question?</span>
+const TopBar = ({ visible }) => (
+  <div
+    className={`w-full bg-[#1c1c35] text-white text-sm transition-all duration-300 ${
+      visible ? "opacity-100 py-2 h-auto" : "opacity-0 h-0 overflow-hidden"
+    }`}
+  >
+    <div className="max-w-7xl mx-auto px-4 flex justify-between items-center flex-wrap">
+      <div className="flex items-center gap-6 text-xs md:text-sm">
+        <div className="flex items-center gap-2">
+          <FaEnvelope className="text-sm" />
+          <span>Info@YourDomain.com</span>
         </div>
-        <div className="flex gap-4">
-          <a href="#" className="hover:underline text-xs md:text-sm font-semibold">
-            Register
-          </a>
-          <a href="#" className="hover:underline text-xs md:text-sm font-semibold">
-            Login
-          </a>
+        <div className="flex items-center gap-2">
+          <FaPhone className="text-sm" />
+          <span>+(333) 052 39876</span>
         </div>
+        <span className="font-semibold">Have any question?</span>
+      </div>
+      <div className="flex gap-4">
+        <a href="/register" className="hover:underline text-xs md:text-sm font-semibold">
+          Register
+        </a>
+        <a href="/login" className="hover:underline text-xs md:text-sm font-semibold">
+          Login
+        </a>
       </div>
     </div>
-  );
-};
+  </div>
+);
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
 
   return (
-    <header className="w-full shadow-md bg-white z-50 py-2">
+    <header className="w-full shadow-md bg-white z-[9998] transition-all duration-300 py-2">
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         <div className="flex items-center gap-2">
           <img src="/logo-icon.png" alt="logo" className="w-6 h-6" />
@@ -66,20 +64,33 @@ const Navbar = () => {
           </span>
         </div>
 
-        <nav className="hidden md:flex items-center gap-6">
+        {/* Desktop Menu */}
+        <nav className="hidden md:flex items-center gap-6 transition-all duration-300">
           {navLinks.map((link, idx) => (
-            <div key={idx} className="relative group">
-              <button
-                onMouseEnter={() => setOpenDropdown(link.subMenu ? link.name : null)}
-                onMouseLeave={() => setOpenDropdown(null)}
-                className="flex items-center text-sm font-semibold text-slate-900 hover:text-yellow-500 transition"
+            <div
+              key={idx}
+              className="relative group"
+              onMouseEnter={() => setOpenDropdown(link.subMenu ? link.name : null)}
+              onMouseLeave={() => setOpenDropdown(null)}
+            >
+              {/* Use <a> for better accessibility */}
+              <a
+                href={link.href}
+                onClick={e => {
+                  // Prevent default if submenu exists and href is placeholder
+                  if (link.subMenu && link.href === "#") e.preventDefault();
+                }}
+                className="flex items-center text-sm font-semibold text-slate-900 hover:text-yellow-500 transition cursor-pointer select-none"
+                aria-haspopup={link.subMenu ? "true" : undefined}
+                aria-expanded={openDropdown === link.name ? "true" : "false"}
               >
                 {link.name}
                 {link.subMenu && <MdKeyboardArrowDown className="ml-1" />}
-              </button>
+              </a>
 
+              {/* Dropdown */}
               {link.subMenu && link.children?.length > 0 && openDropdown === link.name && (
-                <div className="absolute top-full left-0 mt-2 bg-white border rounded shadow-lg py-2 z-50 w-40 animate-fadeIn">
+                <div className="absolute top-full left-0 mt-2 bg-white rounded shadow-lg py-2 z-50 w-40 animate-fadeIn border border-gray-200">
                   {link.children.map((child, i) => (
                     <a
                       key={i}
@@ -95,21 +106,24 @@ const Navbar = () => {
           ))}
 
           <a
-            href="#"
+            href="/register"
             className="ml-4 bg-yellow-500 text-white px-5 py-2 text-sm font-semibold rounded hover:bg-yellow-600 transition"
           >
             REGISTER NOW
           </a>
         </nav>
 
+        {/* Mobile menu button */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden text-2xl text-slate-800 focus:outline-none"
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
         >
           {mobileOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
 
+      {/* Mobile Menu */}
       <div
         className={`md:hidden transition-all duration-300 bg-white px-6 pt-4 pb-6 shadow-md ${
           mobileOpen ? "block" : "hidden"
@@ -141,7 +155,7 @@ const Navbar = () => {
         ))}
 
         <a
-          href="#"
+          href="/register"
           className="block mt-4 bg-yellow-500 text-white text-center py-2 font-bold hover:bg-yellow-600 transition rounded"
         >
           REGISTER NOW

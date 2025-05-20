@@ -4,42 +4,48 @@ const testimonials = [
   {
     name: "Jonathan Smith",
     company: "Wordpress Inc.",
-    image: "https://t3.ftcdn.net/jpg/02/55/22/68/360_F_255226859_Rhqr5hflr2esVXHQE1sS1bWxmZxs0gWI.jpg",
+    image:
+      "https://t3.ftcdn.net/jpg/02/55/22/68/360_F_255226859_Rhqr5hflr2esVXHQE1sS1bWxmZxs0gWI.jpg",
     review:
       "This should be used to tell a story and let your users know about your product or service.",
   },
   {
     name: "Angelina Rose",
     company: "Envato Inc.",
-    image: "https://t3.ftcdn.net/jpg/02/55/22/68/360_F_255226859_Rhqr5hflr2esVXHQE1sS1bWxmZxs0gWI.jpg",
+    image:
+      "https://t3.ftcdn.net/jpg/02/55/22/68/360_F_255226859_Rhqr5hflr2esVXHQE1sS1bWxmZxs0gWI.jpg",
     review:
       "This should be used to tell a story and let your users know about your product or service.",
   },
   {
     name: "Michel Brown",
     company: "Google Inc.",
-    image: "https://t3.ftcdn.net/jpg/02/55/22/68/360_F_255226859_Rhqr5hflr2esVXHQE1sS1bWxmZxs0gWI.jpg",
+    image:
+      "https://t3.ftcdn.net/jpg/02/55/22/68/360_F_255226859_Rhqr5hflr2esVXHQE1sS1bWxmZxs0gWI.jpg",
     review:
       "This should be used to tell a story and let your users know about your product or service.",
   },
-   {
+  {
     name: "Jonathan Smith",
     company: "Wordpress Inc.",
-    image: "https://t3.ftcdn.net/jpg/02/55/22/68/360_F_255226859_Rhqr5hflr2esVXHQE1sS1bWxmZxs0gWI.jpg",
+    image:
+      "https://t3.ftcdn.net/jpg/02/55/22/68/360_F_255226859_Rhqr5hflr2esVXHQE1sS1bWxmZxs0gWI.jpg",
     review:
       "This should be used to tell a story and let your users know about your product or service.",
   },
   {
     name: "Angelina Rose",
     company: "Envato Inc.",
-    image: "https://t3.ftcdn.net/jpg/02/55/22/68/360_F_255226859_Rhqr5hflr2esVXHQE1sS1bWxmZxs0gWI.jpg",
+    image:
+      "https://t3.ftcdn.net/jpg/02/55/22/68/360_F_255226859_Rhqr5hflr2esVXHQE1sS1bWxmZxs0gWI.jpg",
     review:
       "This should be used to tell a story and let your users know about your product or service.",
   },
   {
     name: "Michel Brown",
     company: "Google Inc.",
-    image: "https://t3.ftcdn.net/jpg/02/55/22/68/360_F_255226859_Rhqr5hflr2esVXHQE1sS1bWxmZxs0gWI.jpg",
+    image:
+      "https://t3.ftcdn.net/jpg/02/55/22/68/360_F_255226859_Rhqr5hflr2esVXHQE1sS1bWxmZxs0gWI.jpg",
     review:
       "This should be used to tell a story and let your users know about your product or service.",
   },
@@ -56,13 +62,18 @@ const TestimonialCarousel = () => {
   const [slidesPerView, setSlidesPerView] = useState(getSlidesPerView());
   const timeoutRef = useRef(null);
 
+  // Drag state
+  const [isDragging, setIsDragging] = useState(false);
+  const dragStartX = useRef(0);
+  const dragTranslateX = useRef(0);
+  const sliderRef = useRef(null);
+
   const resetTimeout = () => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
   };
 
-  // Handle responsive slidesPerView on resize
   useEffect(() => {
     const handleResize = () => {
       setSlidesPerView(getSlidesPerView());
@@ -71,8 +82,9 @@ const TestimonialCarousel = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Auto slide logic
   useEffect(() => {
+    if (isDragging) return; // pause auto-slide while dragging
+
     resetTimeout();
     timeoutRef.current = setTimeout(() => {
       const maxIndex = testimonials.length - slidesPerView;
@@ -82,10 +94,63 @@ const TestimonialCarousel = () => {
     }, 3000);
 
     return () => resetTimeout();
-  }, [currentIndex, slidesPerView]);
+  }, [currentIndex, slidesPerView, isDragging]);
 
   const slideWidthPercentage = 100 / slidesPerView;
   const dotsCount = testimonials.length - slidesPerView + 1;
+
+  // Drag handlers
+  const onPointerDown = (e) => {
+    setIsDragging(true);
+    dragStartX.current = e.clientX || e.touches?.[0]?.clientX || 0;
+    dragTranslateX.current = 0;
+    if (sliderRef.current) {
+      sliderRef.current.style.transition = "none"; // disable transition while dragging
+      sliderRef.current.style.cursor = "grabbing";
+    }
+  };
+
+  const onPointerMove = (e) => {
+    if (!isDragging) return;
+    const currentX = e.clientX || e.touches?.[0]?.clientX || 0;
+    dragTranslateX.current = currentX - dragStartX.current;
+
+    if (sliderRef.current) {
+      const containerWidth = sliderRef.current.offsetWidth;
+      const translatePercent = (dragTranslateX.current / containerWidth) * 100;
+      const baseTranslate = currentIndex * (100 / testimonials.length);
+      sliderRef.current.style.transform = `translateX(calc(-${baseTranslate}% + ${translatePercent}%))`;
+    }
+  };
+
+  const onPointerUpOrLeave = () => {
+    if (!isDragging) return;
+    setIsDragging(false);
+
+    if (sliderRef.current) {
+      sliderRef.current.style.transition = "transform 0.5s ease-in-out";
+      sliderRef.current.style.cursor = "grab";
+    }
+
+    const containerWidth = sliderRef.current?.offsetWidth || 1;
+    const dragPercent = (dragTranslateX.current / containerWidth) * 100;
+    const threshold = 20; // drag threshold to change slide
+
+    if (dragPercent > threshold && currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    } else if (
+      dragPercent < -threshold &&
+      currentIndex < testimonials.length - slidesPerView
+    ) {
+      setCurrentIndex(currentIndex + 1);
+    } else {
+      // Snap back if threshold not met
+      if (sliderRef.current) {
+        const baseTranslate = currentIndex * (100 / testimonials.length);
+        sliderRef.current.style.transform = `translateX(-${baseTranslate}%)`;
+      }
+    }
+  };
 
   return (
     <section className="py-16 bg-white text-center max-w-7xl mx-auto px-4">
@@ -96,17 +161,27 @@ const TestimonialCarousel = () => {
 
       <div className="overflow-hidden relative">
         <div
-          className="flex transition-transform duration-500 ease-in-out"
+          ref={sliderRef}
+          className="flex transition-transform duration-500 ease-in-out cursor-grab select-none"
           style={{
             width: `${(testimonials.length * 100) / slidesPerView}%`,
             transform: `translateX(-${currentIndex * (100 / testimonials.length)}%)`,
           }}
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={onPointerUpOrLeave}
+          onPointerCancel={onPointerUpOrLeave}
+          onPointerLeave={onPointerUpOrLeave}
+          onTouchStart={onPointerDown}
+          onTouchMove={onPointerMove}
+          onTouchEnd={onPointerUpOrLeave}
+          onTouchCancel={onPointerUpOrLeave}
         >
           {testimonials.map((item, index) => (
             <div
               key={index}
               style={{ width: `${slideWidthPercentage}%` }}
-              className="p-6 mx-2 rounded-lg shadow-md border bg-white hover:shadow-xl transition duration-300"
+              className="p-6 mx-2 rounded-lg bg-white shadow-md hover:shadow-2xl transition-shadow duration-300"
             >
               <img
                 src={item.image}
