@@ -2,12 +2,12 @@ import React from "react";
 import Slider from "react-slick";
 
 const logos = [
-  { id: 1, src: "/logos/logo1.png", alt: "COCO" },
-  { id: 2, src: "/logos/logo2.png", alt: "Autoom" },
-  { id: 3, src: "/logos/logo3.png", alt: "RACLE" },
-  { id: 4, src: "/logos/logo4.png", alt: "Crypto" },
-  { id: 5, src: "/logos/logo5.png", alt: "Bitcoin" },
-  { id: 6, src: "/logos/logo6.png", alt: "PayBit" },
+  { id: 1, src: "/logo.jpg", alt: "COCO" },
+  { id: 2, src: "/logo.jpg", alt: "Autoom" },
+  { id: 3, src: "/logo.jpg", alt: "RACLE" },
+  { id: 4, src: "/logo.jpg", alt: "Crypto" },
+  { id: 5, src: "/logo.jpg", alt: "Bitcoin" },
+  { id: 6, src: "/logo.jpg", alt: "PayBit" },
 ];
 
 const HomeBrandsLogoSlider = () => {

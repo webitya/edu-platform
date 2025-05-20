@@ -99,7 +99,7 @@ const HomeHeroSection = () => {
         <div className="flex items-start gap-4 p-6">
           <FaCertificate className="text-4xl" />
           <div>
-            <h3 className="text-lg font-bold">Cources</h3>
+            <h3 className="text-lg font-bold">Courses</h3>
             <p className="text-sm mt-1">Lorem Ipsum is simply dummy text of the ed industry.</p>
             <a href="#" className="inline-block mt-2 underline text-sm">Learn More</a>
           </div>

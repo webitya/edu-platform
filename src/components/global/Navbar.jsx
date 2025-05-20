@@ -58,9 +58,9 @@ const Navbar = () => {
     <header className="w-full shadow-md bg-white z-[9998] transition-all duration-300 py-2">
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <img src="/logo-icon.png" alt="logo" className="w-6 h-6" />
+          <img src="/logo.jpg" alt="logo" className="w-10 h-10" />
           <span className="text-2xl font-bold text-black">
-            unimax<span className="text-yellow-500">.</span>
+            <span className="text-yellow-500">L L B</span>
           </span>
         </div>
 
