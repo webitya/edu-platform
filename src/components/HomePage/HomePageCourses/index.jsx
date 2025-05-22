@@ -4,38 +4,38 @@ import { FaUsers, FaHeart } from 'react-icons/fa';
 const courses = [
   {
     id: 1,
-    title: 'Basic Wordpress Development',
-    description: 'Lorem Ipsum is simply dummy text of the printing and industry.',
-    author: 'Devid Cameroon',
+    title: 'Foundation of Advocacy',
+    description: 'Learn the core principles and courtroom strategies every advocate must master.',
+    author: 'Adv. Rishabh Kapoor',
     image: 'https://img.freepik.com/free-photo/young-man-writing-notebook-study-session_23-2149285403.jpg',
-    price: '$499',
+    price: '₹1499',
     link: '#',
   },
   {
     id: 2,
-    title: 'Mastering Php Language',
-    description: 'Lorem Ipsum is simply dummy text of the printing and industry.',
-    author: 'Donal Trump',
+    title: 'Drafting & Pleading Workshop',
+    description: 'Hands-on training in drafting legal notices, plaints, and written statements.',
+    author: 'Adv. Mehak Arora',
     image: 'https://img.freepik.com/free-photo/young-man-writing-notebook-study-session_23-2149285403.jpg',
-    price: '$149',
+    price: '₹1999',
     link: '#',
   },
   {
     id: 3,
-    title: 'Javascript Development',
-    description: 'Lorem Ipsum is simply dummy text of the printing and industry.',
-    author: 'Jone Smith',
+    title: 'Mock Trial & Moot Court Training',
+    description: 'Participate in simulated trials to build courtroom confidence and advocacy skills.',
+    author: 'Adv. Nikhil Sharma',
     image: 'https://img.freepik.com/free-photo/young-man-writing-notebook-study-session_23-2149285403.jpg',
-    price: '$239',
+    price: '₹2499',
     link: '#',
   },
   {
     id: 4,
-    title: 'Frontend Development',
-    description: 'Lorem Ipsum is simply dummy text of the printing and industry.',
-    author: 'Angelina Rose',
+    title: 'Legal Research & Judgment Analysis',
+    description: 'Master legal research tools and techniques to interpret and analyze case law.',
+    author: 'Dr. Renu Bhatia',
     image: 'https://img.freepik.com/free-photo/young-man-writing-notebook-study-session_23-2149285403.jpg',
-    price: '$849',
+    price: '₹1299',
     link: '#',
   },
 ];
@@ -61,9 +61,11 @@ const CourseCard = ({ course }) => (
 
 const PopularCourses = () => (
   <div className="py-12 px-4 bg-gray-100 min-h-screen text-center">
-    <h2 className="text-3xl font-bold mb-2 text-gray-800">POPULER COURSES</h2>
-    <p className="text-gray-600 mb-10">Lorem Ipsum is simply dummy text of the printing and industry.</p>
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 justify-center">
+    <h2 className="text-3xl font-bold mb-2 text-gray-800">POPULAR COURSES</h2>
+    <p className="text-gray-600 mb-10">
+      Explore our top-rated legal training modules designed for aspiring litigators and law students.
+    </p>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 justify-center items-center">
       {courses.map(course => (
         <CourseCard key={course.id} course={course} />
       ))}

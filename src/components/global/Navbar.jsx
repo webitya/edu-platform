@@ -17,7 +17,7 @@ const navLinks = [
   //     { name: "Page 2", href: "/page2" },
   //   ],
   // },
-  { name: "Blog", href: "/blogs", subMenu: true, children: [] },
+  { name: "Blog", href: "/blogs"},
   { name: "Contact", href: "/contact" },
 ];
 

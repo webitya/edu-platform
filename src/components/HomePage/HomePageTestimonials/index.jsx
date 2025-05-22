@@ -2,52 +2,46 @@ import React, { useState, useEffect, useRef } from "react";
 
 const testimonials = [
   {
-    name: "Jonathan Smith",
-    company: "Wordpress Inc.",
-    image:
-      "https://t3.ftcdn.net/jpg/02/55/22/68/360_F_255226859_Rhqr5hflr2esVXHQE1sS1bWxmZxs0gWI.jpg",
+    name: "Aman Raj",
+    company: "Judiciary Aspirant",
+    image: "https://i.ibb.co/yRfKP5f/male-avatar.jpg",
     review:
-      "This should be used to tell a story and let your users know about your product or service.",
+      "Law Learning Bench is the best online platform for Judiciary coaching. The mentors here simplify even the toughest legal concepts with great clarity.",
   },
   {
-    name: "Angelina Rose",
-    company: "Envato Inc.",
-    image:
-      "https://t3.ftcdn.net/jpg/02/55/22/68/360_F_255226859_Rhqr5hflr2esVXHQE1sS1bWxmZxs0gWI.jpg",
+    name: "Priya Sharma",
+    company: "Civil Judge (Jr Division)",
+    image: "https://i.ibb.co/8BsdqZw/female-avatar.jpg",
     review:
-      "This should be used to tell a story and let your users know about your product or service.",
+      "The structure and syllabus coverage at Law Learning Bench helped me clear the exam in one attempt. Immense gratitude to the entire team!",
   },
   {
-    name: "Michel Brown",
-    company: "Google Inc.",
-    image:
-      "https://t3.ftcdn.net/jpg/02/55/22/68/360_F_255226859_Rhqr5hflr2esVXHQE1sS1bWxmZxs0gWI.jpg",
+    name: "Ravi Kishore",
+    company: "CLAT Aspirant",
+    image: "https://i.ibb.co/yRfKP5f/male-avatar.jpg",
     review:
-      "This should be used to tell a story and let your users know about your product or service.",
+      "Their approach to legal aptitude and reasoning is unmatched. The mock tests and doubt sessions helped boost my confidence immensely.",
   },
   {
-    name: "Jonathan Smith",
-    company: "Wordpress Inc.",
-    image:
-      "https://t3.ftcdn.net/jpg/02/55/22/68/360_F_255226859_Rhqr5hflr2esVXHQE1sS1bWxmZxs0gWI.jpg",
+    name: "Sneha Das",
+    company: "LLB Final Year Student",
+    image: "https://i.ibb.co/8BsdqZw/female-avatar.jpg",
     review:
-      "This should be used to tell a story and let your users know about your product or service.",
+      "Not only Judiciary, but their content is also great for semester exams and internships. The mentors are really supportive and highly experienced.",
   },
   {
-    name: "Angelina Rose",
-    company: "Envato Inc.",
-    image:
-      "https://t3.ftcdn.net/jpg/02/55/22/68/360_F_255226859_Rhqr5hflr2esVXHQE1sS1bWxmZxs0gWI.jpg",
+    name: "Vikram Singh",
+    company: "Law Intern, Ranchi HC",
+    image: "https://i.ibb.co/yRfKP5f/male-avatar.jpg",
     review:
-      "This should be used to tell a story and let your users know about your product or service.",
+      "Joining LLB was the best decision I made in my prep journey. They focus on conceptual understanding, not just mugging up laws.",
   },
   {
-    name: "Michel Brown",
-    company: "Google Inc.",
-    image:
-      "https://t3.ftcdn.net/jpg/02/55/22/68/360_F_255226859_Rhqr5hflr2esVXHQE1sS1bWxmZxs0gWI.jpg",
+    name: "Anjali Mehta",
+    company: "UP PCS-J Aspirant",
+    image: "https://i.ibb.co/8BsdqZw/female-avatar.jpg",
     review:
-      "This should be used to tell a story and let your users know about your product or service.",
+      "Detailed lectures, regular practice, and honest feedback—LLB has it all. I recommend it to every serious law aspirant.",
   },
 ];
 
@@ -62,7 +56,6 @@ const TestimonialCarousel = () => {
   const [slidesPerView, setSlidesPerView] = useState(getSlidesPerView());
   const timeoutRef = useRef(null);
 
-  // Drag state
   const [isDragging, setIsDragging] = useState(false);
   const dragStartX = useRef(0);
   const dragTranslateX = useRef(0);
@@ -83,8 +76,7 @@ const TestimonialCarousel = () => {
   }, []);
 
   useEffect(() => {
-    if (isDragging) return; // pause auto-slide while dragging
-
+    if (isDragging) return;
     resetTimeout();
     timeoutRef.current = setTimeout(() => {
       const maxIndex = testimonials.length - slidesPerView;
@@ -92,20 +84,18 @@ const TestimonialCarousel = () => {
         prevIndex >= maxIndex ? 0 : prevIndex + 1
       );
     }, 3000);
-
     return () => resetTimeout();
   }, [currentIndex, slidesPerView, isDragging]);
 
   const slideWidthPercentage = 100 / slidesPerView;
   const dotsCount = testimonials.length - slidesPerView + 1;
 
-  // Drag handlers
   const onPointerDown = (e) => {
     setIsDragging(true);
     dragStartX.current = e.clientX || e.touches?.[0]?.clientX || 0;
     dragTranslateX.current = 0;
     if (sliderRef.current) {
-      sliderRef.current.style.transition = "none"; // disable transition while dragging
+      sliderRef.current.style.transition = "none";
       sliderRef.current.style.cursor = "grabbing";
     }
   };
@@ -134,7 +124,7 @@ const TestimonialCarousel = () => {
 
     const containerWidth = sliderRef.current?.offsetWidth || 1;
     const dragPercent = (dragTranslateX.current / containerWidth) * 100;
-    const threshold = 20; // drag threshold to change slide
+    const threshold = 20;
 
     if (dragPercent > threshold && currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
@@ -144,7 +134,6 @@ const TestimonialCarousel = () => {
     ) {
       setCurrentIndex(currentIndex + 1);
     } else {
-      // Snap back if threshold not met
       if (sliderRef.current) {
         const baseTranslate = currentIndex * (100 / testimonials.length);
         sliderRef.current.style.transform = `translateX(-${baseTranslate}%)`;
@@ -154,9 +143,9 @@ const TestimonialCarousel = () => {
 
   return (
     <section className="py-16 bg-white text-center max-w-7xl mx-auto px-4">
-      <h2 className="text-3xl font-bold mb-2">WHAT PEOPLE SAY</h2>
+      <h2 className="text-3xl font-bold mb-2">Student Experiences</h2>
       <p className="text-gray-600 mb-10">
-        Lorem Ipsum is simply dummy text of the printing and industry.
+        Hear what our successful candidates and learners have to say about their journey with Law Learning Bench.
       </p>
 
       <div className="overflow-hidden relative">

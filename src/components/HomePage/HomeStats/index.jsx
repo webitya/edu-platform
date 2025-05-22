@@ -1,5 +1,5 @@
 import React from "react";
-import { FaUserGraduate, FaBookOpen, FaBookmark, FaCrown } from "react-icons/fa";
+import { FaUserGraduate, FaBookOpen, FaGavel, FaCrown } from "react-icons/fa";
 import CountUp from "react-countup";
 
 const HomeStatsSection = () => {
@@ -8,25 +8,25 @@ const HomeStatsSection = () => {
       id: 1,
       icon: <FaUserGraduate className="text-yellow-400 text-4xl mb-2" />,
       value: 95,
-      label: "Instructors",
+      label: "Expert Legal Mentors",
     },
     {
       id: 2,
       icon: <FaBookOpen className="text-yellow-400 text-4xl mb-2" />,
       value: 549,
-      label: "Online Courses",
+      label: "Law Courses",
     },
     {
       id: 3,
-      icon: <FaBookmark className="text-yellow-400 text-4xl mb-2" />,
-      value: 204,
-      label: "Year of History",
+      icon: <FaGavel className="text-yellow-400 text-4xl mb-2" />,
+      value: 10,
+      label: "Years of Legal Excellence",
     },
     {
       id: 4,
       icon: <FaCrown className="text-yellow-400 text-4xl mb-2" />,
       value: 4950,
-      label: "Active Students",
+      label: "Enrolled Students",
     },
   ];
 
@@ -34,11 +34,12 @@ const HomeStatsSection = () => {
     <section
       className="bg-cover bg-center"
       style={{
-        backgroundImage: "url('https://static.vecteezy.com/system/resources/thumbnails/006/054/844/small/asian-young-university-students-studying-together-sitting-at-desk-in-library-photo.jpg')", // Replace with your actual path
+        backgroundImage:
+          "url('https://static.vecteezy.com/system/resources/thumbnails/006/054/844/small/asian-young-university-students-studying-together-sitting-at-desk-in-library-photo.jpg')",
       }}
     >
-      <div className="bg-black/70 py-12">
-        <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center text-white px-4">
+      <div className="bg-black/80 py-14">
+        <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center text-white px-4">
           {statsData.map((stat) => (
             <div key={stat.id} className="flex flex-col items-center">
               {stat.icon}

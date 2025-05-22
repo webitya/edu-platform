@@ -5,27 +5,30 @@ const HomeRecentStories = () => {
   const recentStories = [
     {
       id: 1,
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyfGhGiDwfCXg3iwahhvQ-7S2tSRvdXSxEiA&s",
-      date: "January 01, 2018",
-      title: "Standard gallery post",
-      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      link: "#",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyfGhGiDwfCXg3iwahhvQ-7S2tSRvdXSxEiA&s", // Replace with your actual image URL
+      date: "May 22, 2025",
+      title: "About Law Learning Bench",
+      description:
+        "India’s premier advocacy skill development platform offering practical legal training, mentorship, and access to real-world courtroom expertise.",
+      link: "https://www.lawlearningbench.com/about",
     },
     {
       id: 2,
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyfGhGiDwfCXg3iwahhvQ-7S2tSRvdXSxEiA&s",
-      date: "January 01, 2018",
-      title: "Blog post with couple photos",
-      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      link: "#",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyfGhGiDwfCXg3iwahhvQ-7S2tSRvdXSxEiA&s", // Replace with your actual image URL
+      date: "June 15, 2025",
+      title: "Courtroom Advocacy Mastery Program",
+      description:
+        "A 12-week, practice-based certification designed to equip law students and young advocates with persuasive advocacy, drafting, and litigation skills.",
+      link: "https://www.lawlearningbench.com/advocacy-program",
     },
     {
       id: 3,
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyfGhGiDwfCXg3iwahhvQ-7S2tSRvdXSxEiA&s",
-      date: "January 01, 2018",
-      title: "Standard gallery post",
-      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      link: "#",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyfGhGiDwfCXg3iwahhvQ-7S2tSRvdXSxEiA&s", // Replace with your actual image URL
+      date: "May 2025",
+      title: "Our Esteemed Advisory Board",
+      description:
+        "Guided by former Chief Justices and Senior Advocates, our board brings a wealth of experience and vision to mentor the next generation of legal professionals.",
+      link: "https://www.lawlearningbench.com/advisory-board",
     },
   ];
 
@@ -34,7 +37,7 @@ const HomeRecentStories = () => {
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-3xl font-bold text-gray-800 mb-2">RECENT STORIES</h2>
         <p className="text-gray-600 mb-10">
-          Lorem Ipsum is simply dummy text of the printing and industry.
+          Explore our latest initiatives and updates at Law Learning Bench.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
@@ -54,6 +57,8 @@ const HomeRecentStories = () => {
               <a
                 href={story.link}
                 className="text-black font-semibold text-sm hover:text-yellow-500"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 READ MORE
               </a>

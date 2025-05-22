@@ -15,18 +15,18 @@ const Footer = () => {
         {/* Logo and Description */}
         <div>
           <h2 className="text-2xl font-bold text-white mb-4">
-            <span className="text-yellow-400 inline-block mr-1">🎓</span>
-            <span className="font-extrabold">unimax</span>
+            <span className="text-yellow-400 inline-block mr-1">⚖️</span>
+            <span className="font-extrabold">Law Learning Bench</span>
           </h2>
           <p className="text-sm text-gray-300 mb-4">
-            We are Education, create your passion and inspiration. And hope success will come for your dream. Please send email and get latest news.
+            India’s premier advocacy skill development platform empowering young legal professionals with practical training, ethical values, and real-world courtroom readiness.
           </p>
           <div className="flex gap-3 mt-4">
-            <FaFacebookF className="hover:text-yellow-400 cursor-pointer" />
-            <FaTwitter className="hover:text-yellow-400 cursor-pointer" />
-            <FaPinterestP className="hover:text-yellow-400 cursor-pointer" />
-            <FaInstagram className="hover:text-yellow-400 cursor-pointer" />
-            <FaLinkedinIn className="hover:text-yellow-400 cursor-pointer" />
+            <a href="https://www.facebook.com/lawlearningbench" target="_blank" rel="noopener noreferrer"><FaFacebookF className="hover:text-yellow-400 cursor-pointer" /></a>
+            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><FaTwitter className="hover:text-yellow-400 cursor-pointer" /></a>
+            <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer"><FaPinterestP className="hover:text-yellow-400 cursor-pointer" /></a>
+            <a href="https://www.instagram.com/lawlearningbenchllb" target="_blank" rel="noopener noreferrer"><FaInstagram className="hover:text-yellow-400 cursor-pointer" /></a>
+            <a href="https://www.linkedin.com/company/lawlearningbench" target="_blank" rel="noopener noreferrer"><FaLinkedinIn className="hover:text-yellow-400 cursor-pointer" /></a>
           </div>
         </div>
 
@@ -34,21 +34,21 @@ const Footer = () => {
         <div>
           <h4 className="font-semibold mb-4">Navigation</h4>
           <ul className="space-y-2 text-sm text-gray-300">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Popular Courses</a></li>
-            <li><a href="#">Instructors</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="https://www.lawlearningbench.com/about">About Us</a></li>
+            <li><a href="https://www.lawlearningbench.com/advocacy-program">Courses</a></li>
+            <li><a href="https://www.lawlearningbench.com/advisory-board">Advisory Board</a></li>
+            <li><a href="https://www.lawlearningbench.com/contact">Contact Us</a></li>
           </ul>
         </div>
 
-        {/* Popular Courses */}
+        {/* Courses */}
         <div>
-          <h4 className="font-semibold mb-4">Popular Courses</h4>
+          <h4 className="font-semibold mb-4">Our Programs</h4>
           <ul className="space-y-2 text-sm text-gray-300">
-            <li><a href="#">Wordpress Development</a></li>
-            <li><a href="#">Javascript</a></li>
-            <li><a href="#">Basic Photoshop</a></li>
-            <li><a href="#">Mastaring Php</a></li>
+            <li><a href="#">Courtroom Advocacy Mastery</a></li>
+            <li><a href="#">Legal Drafting & Ethics</a></li>
+            <li><a href="#">Mock Trials & Mentorship</a></li>
+            <li><a href="#">Live Skills Workshops</a></li>
           </ul>
         </div>
 
@@ -56,14 +56,14 @@ const Footer = () => {
         <div>
           <h4 className="font-semibold mb-4">Useful Links</h4>
           <ul className="space-y-2 text-sm text-gray-300">
-            <li><a href="#">Privacy</a></li>
-            <li><a href="#">Documentation</a></li>
-            <li><a href="#">Forums</a></li>
-            <li><a href="#">Language</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Help Center</a></li>
           </ul>
         </div>
 
-        {/* Get In Touch */}
+        {/* Contact Info */}
         <div>
           <h4 className="font-semibold mb-4">Get In Touch</h4>
           <form className="space-y-2">
@@ -79,16 +79,20 @@ const Footer = () => {
               SUBSCRIBE
             </button>
           </form>
+          <p className="text-sm text-gray-400 mt-4">
+            📞 +91 9871408315<br />
+            ✉️ info@lawlearningbench.com
+          </p>
         </div>
       </div>
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-700 mt-10 pt-6 text-sm flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-6">
-        <p className="text-gray-400">© 2018 UNIMAX POWERED BY DYNAMICLAYERS</p>
+        <p className="text-gray-400">© {new Date().getFullYear()} Law Learning Bench. All rights reserved.</p>
         <div className="flex space-x-6 mt-4 md:mt-0">
-          <a href="#" className="text-gray-400 hover:text-white">ORDERS</a>
-          <a href="#" className="text-gray-400 hover:text-white">TERMS</a>
-          <a href="#" className="text-gray-400 hover:text-white">REPORT PROBLEM</a>
+          <a href="#" className="text-gray-400 hover:text-white">Terms</a>
+          <a href="#" className="text-gray-400 hover:text-white">Privacy</a>
+          <a href="#" className="text-gray-400 hover:text-white">Report Issue</a>
         </div>
       </div>
     </footer>

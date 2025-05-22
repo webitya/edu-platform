@@ -44,14 +44,14 @@ const HomeHeroSection = () => {
         <div>
           <img
             src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1350&q=80"
-            alt="slide1"
+            alt="Courtroom Advocacy"
             className="object-cover h-[90vh] w-full"
           />
         </div>
         <div>
           <img
             src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1350&q=80"
-            alt="slide2"
+            alt="Legal Education"
             className="object-cover h-[90vh] w-full"
           />
         </div>
@@ -61,19 +61,17 @@ const HomeHeroSection = () => {
       <div className="absolute inset-0 flex flex-col items-start justify-center text-white px-6 md:px-20 z-10">
         <p className="text-sm font-semibold uppercase">Join Us Today</p>
         <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mt-2">
-          Better Education <br className="hidden md:block" /> for World.
+          LAW LEARNING BENCH
         </h1>
         <p className="mt-4 max-w-xl text-base md:text-lg">
-          Help today because tomorrow you may be the one who needs helping!
-          <br className="hidden sm:block" />
-          Forget what you can get and see what you can give.
+          India’s Premier Advocacy Skill Development Platform — transforming legal knowledge into courtroom expertise.
         </p>
         <div className="flex gap-4 mt-6">
           <button className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-6 py-2 rounded shadow">
             JOIN WITH US
           </button>
           <button className="bg-white hover:bg-gray-100 text-yellow-600 font-bold px-6 py-2 rounded shadow">
-            OUR CLASSES
+            OUR PROGRAMS
           </button>
         </div>
       </div>
@@ -84,24 +82,24 @@ const HomeHeroSection = () => {
           <FaLaptopCode className="text-4xl" />
           <div>
             <h3 className="text-lg font-bold">Apply Online</h3>
-            <p className="text-sm mt-1">Lorem Ipsum is simply dummy text of the ed industry.</p>
-            <a href="#" className="inline-block mt-2 underline text-sm">Learn More</a>
+            <p className="text-sm mt-1">Enroll in our Courtroom Advocacy Mastery Program launching June 15, 2025.</p>
+            <a href="#" className="inline-block mt-2 underline text-sm">Start Application</a>
           </div>
         </div>
         <div className="flex items-start gap-4 p-6 border-b sm:border-b-0 sm:border-r border-yellow-400">
           <GiProgression className="text-4xl" />
           <div>
-            <h3 className="text-lg font-bold">Prospectus</h3>
-            <p className="text-sm mt-1">Lorem Ipsum is simply dummy text of the ed industry.</p>
-            <a href="#" className="inline-block mt-2 underline text-sm">Learn More</a>
+            <h3 className="text-lg font-bold">Download Prospectus</h3>
+            <p className="text-sm mt-1">Get details on modules, schedule, and mentor lineup.</p>
+            <a href="#" className="inline-block mt-2 underline text-sm">Download Now</a>
           </div>
         </div>
         <div className="flex items-start gap-4 p-6">
           <FaCertificate className="text-4xl" />
           <div>
-            <h3 className="text-lg font-bold">Courses</h3>
-            <p className="text-sm mt-1">Lorem Ipsum is simply dummy text of the ed industry.</p>
-            <a href="#" className="inline-block mt-2 underline text-sm">Learn More</a>
+            <h3 className="text-lg font-bold">Explore Courses</h3>
+            <p className="text-sm mt-1">From courtroom practice to legal drafting—find your path.</p>
+            <a href="#" className="inline-block mt-2 underline text-sm">View Courses</a>
           </div>
         </div>
       </div>
