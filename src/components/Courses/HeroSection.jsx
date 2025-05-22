@@ -9,34 +9,34 @@ const HeroSection = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="absolute inset-0 bg-black/50"></div>
-      <div className="container mx-auto px-4 z-10">
+      <div className="absolute inset-0 bg-black/60"></div>
+      <div className="container mx-auto px-4 z-10 max-w-4xl">
         <motion.h1
           className="text-4xl font-bold text-white mb-2"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-        Our Courses
+          Law Learning Bench
         </motion.h1>
         <motion.p
-          className="text-white"
+          className="text-white text-lg mb-4"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          Lorem ipsum is simply text of the industry.
+          India’s Premier Advocacy Skill Development Platform
         </motion.p>
 
         <motion.div
-          className="flex items-center mt-6"
+          className="flex items-center text-white space-x-2"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4 }}
         >
-          <span className="text-white">HOME</span>
-          <span className="mx-2 text-white">/</span>
-          <span className="text-yellow-500">Courses</span>
+          <span className="hover:underline cursor-pointer">Home</span>
+          <span>/</span>
+          <span className="text-yellow-400 font-semibold">Courses</span>
         </motion.div>
       </div>
     </motion.section>
