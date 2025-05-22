@@ -1,8 +1,8 @@
 export const coursesData = [
   {
     id: 1,
-    title: "Basic Wordpress Development",
-    description: "Lorem ipsum is simply dummy text of the printing and industry.",
+    title: "Introduction to Constitutional Law",
+    description: "Understand the foundational principles of the Indian Constitution, including fundamental rights, duties, and directive principles.",
     price: 499,
     views: 763,
     likes: 205,
@@ -14,8 +14,8 @@ export const coursesData = [
   },
   {
     id: 2,
-    title: "Mastering Php Language",
-    description: "Lorem ipsum is simply dummy text of the printing and industry.",
+    title: "Criminal Law: IPC & CrPC Essentials",
+    description: "Explore the key sections of the Indian Penal Code and Code of Criminal Procedure with real-life case applications.",
     price: 149,
     views: 763,
     likes: 205,
@@ -27,8 +27,8 @@ export const coursesData = [
   },
   {
     id: 3,
-    title: "Javascript Development",
-    description: "Lorem ipsum is simply dummy text of the printing and industry.",
+    title: "Contract Law: From Offer to Acceptance",
+    description: "A comprehensive overview of the Indian Contract Act, 1872, focusing on agreements, enforceability, breach, and remedies.",
     price: 239,
     views: 763,
     likes: 205,
@@ -40,8 +40,8 @@ export const coursesData = [
   },
   {
     id: 4,
-    title: "Frontend Development",
-    description: "Lorem ipsum is simply dummy text of the printing and industry.",
+    title: "Legal Drafting & Research Techniques",
+    description: "Master the art of legal writing, research methods, and drafting contracts, notices, and pleadings with expert guidance.",
     price: 849,
     views: 763,
     likes: 205,
@@ -53,8 +53,8 @@ export const coursesData = [
   },
   {
     id: 5,
-    title: "Psd to Html Convert",
-    description: "Lorem ipsum is simply dummy text of the printing and industry.",
+    title: "Moot Court Training for Beginners",
+    description: "Gain confidence in mooting with practical insights into courtroom etiquette, argument structure, and memorial drafting.",
     price: 149,
     views: 763,
     likes: 205,
@@ -66,8 +66,8 @@ export const coursesData = [
   },
   {
     id: 6,
-    title: "Html to Wordpress Convert",
-    description: "Lorem ipsum is simply dummy text of the printing and industry.",
+    title: "Legal Internship Prep: Skills & Strategy",
+    description: "Prepare for internships with practical modules on CV building, research work, professional communication, and interview tips.",
     price: 149,
     views: 763,
     likes: 205,
