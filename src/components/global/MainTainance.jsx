@@ -3,6 +3,8 @@ import { FiTool, FiMail } from 'react-icons/fi';
 
 const MaintenancePage = () => {
   return (
+ <>
+ 
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-600 via-purple-700 to-indigo-800 text-white px-6">
       <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-10 max-w-md text-center shadow-lg">
         <FiTool className="mx-auto text-6xl mb-6 animate-pulse text-yellow-400" />
@@ -33,6 +35,8 @@ const MaintenancePage = () => {
         &copy; {new Date().getFullYear()} Your Company Name. All rights reserved.
       </footer>
     </div>
+    
+ </>
   );
 };
 

@@ -7,15 +7,16 @@ const navLinks = [
   { name: "About", href: "/about" },
   { name: "Courses", href: "/courses" },
   { name: "Events", href: "/events" },
-  {
-    name: "Pages",
-    href: "/pages", // Use real link or placeholder
-    subMenu: true,
-    children: [
-      { name: "Page 1", href: "/page1" },
-      { name: "Page 2", href: "/page2" },
-    ],
-  },
+    { name: "Gallery", href: "/gallery" },
+  // {
+  //   name: "Pages",
+  //   href: "/pages", // Use real link or placeholder
+  //   subMenu: true,
+  //   children: [
+  //     { name: "Page 1", href: "/page1" },
+  //     { name: "Page 2", href: "/page2" },
+  //   ],
+  // },
   { name: "Blog", href: "/blogs", subMenu: true, children: [] },
   { name: "Contact", href: "/contact" },
 ];
