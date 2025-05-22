@@ -17,15 +17,15 @@ const ContactHero = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          Contact Us
+          Contact Law Learning Bench
         </motion.h1>
         <motion.p
-          className="text-white"
+          className="text-white max-w-xl"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          Lorem ipsum is simply text of the industry.
+          We’re here to guide, support, and collaborate. Reach out to us for program details, mentorship opportunities, or partnerships.
         </motion.p>
 
         <motion.div

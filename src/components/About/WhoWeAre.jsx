@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion"
 
 const WhoWeAre = () => {
@@ -15,12 +14,10 @@ const WhoWeAre = () => {
           >
             <h2 className="text-3xl font-bold mb-6">Who We Are?</h2>
             <p className="text-gray-600 mb-4">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-              industry standard dummy text ever since the 1500, printer took a galley of type and scramble.
+              Law Learning Bench is India’s pioneering platform for courtroom advocacy skill development. We are committed to bridging the gap between legal education and professional practice through intensive, practical, and ethically grounded training.
             </p>
             <p className="text-gray-600 mb-6">
-              Lorem Ipsum has been the industry standard dummy text ever since the 1500, printer took a galley of type
-              more business wordpress themes and scramble.
+              Our programs are designed by experienced advocates and mentors to shape confident, competent, and ethically responsible lawyers. We provide hands-on exposure through mock trials, legal drafting modules, and mentorship, making students courtroom-ready from day one.
             </p>
             <motion.button
               className="bg-yellow-500 hover:bg-yellow-600 text-white py-3 px-6 font-medium transition-all duration-300"
@@ -40,7 +37,7 @@ const WhoWeAre = () => {
           >
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyfGhGiDwfCXg3iwahhvQ-7S2tSRvdXSxEiA&s"
-              alt="University Building"
+              alt="Students in legal workshop"
               className="w-full h-auto rounded-md shadow-lg"
             />
           </motion.div>
@@ -50,4 +47,4 @@ const WhoWeAre = () => {
   )
 }
 
-export default WhoWeAre
+export default WhoWeAre;

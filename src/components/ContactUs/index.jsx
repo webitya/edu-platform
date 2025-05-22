@@ -9,7 +9,7 @@ const ContactSection = () => {
         <iframe
           title="Google Map"
           className="w-full h-full border-0"
-          src="https://maps.google.com/maps?q=New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          src="https://maps.google.com/maps?q=Law%20Learning%20Bench&t=&z=13&ie=UTF8&iwloc=&output=embed"
           allowFullScreen
           loading="lazy"
         ></iframe>
@@ -26,20 +26,20 @@ const ContactSection = () => {
         >
           <h3 className="text-2xl font-semibold mb-4">GET IN TOUCH</h3>
           <p className="text-gray-700 mb-4">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries, but also the leap into electronic typesetting.
+            Law Learning Bench is India’s premier advocacy skill development platform. Reach out to us for inquiries about our programs, partnerships, or mentorship opportunities.
           </p>
           <ul className="space-y-4 text-gray-700">
             <li className="flex items-start gap-3">
               <FaMapMarkerAlt className="text-yellow-500 mt-1" />
-              <span>35 West 33rd Street New York, NY 10001</span>
+              <span>Law Learning Bench, India</span>
             </li>
             <li className="flex items-start gap-3">
               <FaPhoneAlt className="text-yellow-500 mt-1" />
-              <span>+1 212 425 6871, +1 212 425 8533</span>
+              <span>+91 9871408315</span>
             </li>
             <li className="flex items-start gap-3">
               <FaEnvelope className="text-yellow-500 mt-1" />
-              <span>youremail@companyname.com</span>
+              <span>info@lawlearningbench.com</span>
             </li>
           </ul>
         </motion.div>
@@ -53,7 +53,7 @@ const ContactSection = () => {
         >
           <h3 className="text-2xl font-semibold mb-4">DROP US A LINE</h3>
           <p className="text-gray-700 mb-6">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Have questions about our advocacy programs or want to collaborate? Fill out the form below and we’ll get back to you soon.
           </p>
           <form className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
