@@ -31,11 +31,11 @@ const TopBar = ({ visible }) => (
       <div className="flex items-center gap-6 text-xs md:text-sm">
         <div className="flex items-center gap-2">
           <FaEnvelope className="text-sm" />
-          <span>Info@YourDomain.com</span>
+          <span>info@lawlearningbench.com</span>
         </div>
         <div className="flex items-center gap-2">
           <FaPhone className="text-sm" />
-          <span>+(333) 052 39876</span>
+          <span>+91 9871408315</span>
         </div>
         <span className="font-semibold">Have any question?</span>
       </div>
