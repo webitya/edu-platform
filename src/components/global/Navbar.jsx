@@ -58,10 +58,10 @@ const Navbar = () => {
   return (
     <header className="w-full shadow-md bg-white z-[9998] transition-all duration-300 py-1">
       <div className="max-w-7xl mx-auto px-4 py-1 flex justify-between items-center">
-        <div className="flex items-center gap-2">
-          <img src="/logo.jpg" alt="logo" className="w-28 h-28" />
+        <div className="relative top-[0px] z-50 flex items-center gap-2">
+          <a href="/"><img src="/logo.jpg" alt="logo" className="w-40 h-40" /></a>
           <span className="text-2xl font-bold text-black">
-            <span className="text-yellow-500">L L B</span>
+            {/* <span className="text-yellow-500">L L B</span> */}
           </span>
         </div>
 
