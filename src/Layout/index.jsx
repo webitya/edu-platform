@@ -7,6 +7,7 @@ import { Contact } from '../pages/Contact'
 import { Event } from '../pages/Event'
 import { Courses } from '../pages/Courses'
 import { Gallery } from '../pages/Gallery'
+import { Blogs } from '../pages/Blogs'
 
 export const Layout = () => {
   return (
@@ -19,6 +20,7 @@ export const Layout = () => {
           <Route path="/events" element={<Event/>}/>
            <Route path="/courses" element={<Courses/>}/>
            <Route path="/gallery" element={<Gallery/>}/>
+            <Route path="/blogs" element={<Blogs/>}/>
     </Routes>
     </BrowserRouter>
   )
