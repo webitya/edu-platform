@@ -56,10 +56,10 @@ const Navbar = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
 
   return (
-    <header className="w-full shadow-md bg-white z-[9998] transition-all duration-300 py-2">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+    <header className="w-full shadow-md bg-white z-[9998] transition-all duration-300 py-1">
+      <div className="max-w-7xl mx-auto px-4 py-1 flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <img src="/logo.jpg" alt="logo" className="w-14 h-14" />
+          <img src="/logo.jpg" alt="logo" className="w-18 h-18" />
           <span className="text-2xl font-bold text-black">
             <span className="text-yellow-500">L L B</span>
           </span>
