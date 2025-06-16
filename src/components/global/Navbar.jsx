@@ -57,9 +57,9 @@ const Navbar = () => {
 
   return (
     <header className="w-full shadow-md bg-white z-[9998] transition-all duration-300 py-1">
-      <div className="max-w-7xl mx-auto px-4 py-1 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 py-0 flex justify-between items-center">
         <div className="relative top-[0px] z-50 flex items-center gap-2">
-          <a href="/"><img src="/logo.jpg" alt="logo" className="md:w-40 md:h-40 w-20 h-20" /></a>
+          <a href="/"><img src="/logo.jpg" alt="logo" className="md:w-16 md:h-16 w-20 h-20" /></a>
           <span className="text-2xl font-bold text-black">
             {/* <span className="text-yellow-500">L L B</span> */}
           </span>
