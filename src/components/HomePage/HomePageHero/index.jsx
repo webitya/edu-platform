@@ -228,7 +228,7 @@ const CourseHeroSection = () => {
       </div>
 
       {/* Search and Filter Section */}
-      <div className="px-4 md:px-20 pb-3">
+      <div className="px-4 md:px-20 pb-1">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row gap-3 items-center justify-between bg-white rounded-xl p-4 shadow-lg border border-gray-100">
             {/* Search Bar */}
@@ -299,16 +299,16 @@ const CourseHeroSection = () => {
                           key={course.id}
                           className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden"
                         >
-                          <div className="h-32 bg-gradient-to-br from-blue-100 via-purple-50 to-indigo-100 relative overflow-hidden">
+                          <div className="h-28 bg-gradient-to-br from-blue-100 via-purple-50 to-indigo-100 relative overflow-hidden">
                             <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-400/20"></div>
                             <div className="absolute top-3 right-3 bg-white bg-opacity-90 px-3 py-1 rounded-full text-xs font-semibold text-gray-700">
                               {course.duration}
                             </div>
                           </div>
                           <div className="p-4">
-                            <h3 className="font-bold text-gray-900 mb-2 text-sm">{course.title}</h3>
-                            <div className="flex items-center gap-1 mb-3">{renderCourseStars(course.rating)}</div>
-                            <div className="flex items-center justify-between mb-3">
+                            <h3 className="font-bold text-gray-900 mb-0 text-sm">{course.title}</h3>
+                            <div className="flex items-center gap-1 mb-1">{renderCourseStars(course.rating)}</div>
+                            <div className="flex items-center justify-between mb-1">
                               <span className="text-2xl font-bold text-gray-900">₹{course.price}</span>
                               <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
                                 {course.rating}/5
